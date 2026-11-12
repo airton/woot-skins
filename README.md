@@ -52,12 +52,13 @@ Dashboard Scripts run inside every agent's session, with access to the page. **P
 If you prefer a link, pin an exact release and add an integrity hash:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/airton/woot-skins@v0.1.0/dist/woot-skins.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/airton/woot-skins@v0.1.0/dist/woot-skins.css"
+      integrity="sha384-xv8FDozaNnCnJxpXUmPFTzwoWCfrGJBhbd3MzKS/5Pjmhkyn5X1huyU8rBBPKBN6" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/gh/airton/woot-skins@v0.1.0/dist/woot-skins.js"
-        integrity="sha384-REPLACE_WITH_THE_RELEASE_HASH" crossorigin="anonymous"></script>
+        integrity="sha384-QNC4FwSFpIwQTFUYYn6htSFqHfr6YGJo91u/4dwFEs0MlfNwI8mTMyf2/qXO5Faq" crossorigin="anonymous"></script>
 ```
 
-Never link a moving version such as `@latest` or `@main` from a production dashboard.
+Each release lists its hashes in the release notes. Never link a moving version such as `@latest` or `@main` from a production dashboard.
 
 ## Configure
 
