@@ -1,0 +1,395 @@
+/* woot-skins | theme "cilo"
+   Cilo: white panels floating on grey, black actions, soft signal chips.
+   Scoped to html.wsk; the build adds [data-wsk-theme="cilo"]. */
+
+html.wsk {
+  --c-canvas: 240 240 240;      
+  --c-panel: 255 255 255;
+  --c-soft: 247 247 247;        
+  --c-line: 232 232 232;
+  --c-line-strong: 214 214 214;
+  --c-ink: 10 10 10;            
+  --c-ink-2: 82 82 91;          
+  --c-ink-3: 113 113 122;       
+  --c-on-ink: 255 255 255;
+  --c-customer: 241 244 249;     
+  --c-agent: 244 244 245;
+  
+  --s-red-bg: 254 238 236;    --s-red-fg: 196 32 22;    --s-red-ln: 250 202 196;
+  --s-orange-bg: 255 242 230; --s-orange-fg: 180 72 8;  --s-orange-ln: 252 214 180;
+  --s-green-bg: 232 247 238;  --s-green-fg: 21 118 58;  --s-green-ln: 182 230 200;
+  --s-blue-bg: 234 241 255;   --s-blue-fg: 29 78 216;   --s-blue-ln: 196 214 252;
+  --s-gray-bg: 244 244 245;   --s-gray-fg: 82 82 91;    --s-gray-ln: 224 224 228;
+  --s-note-bg: 255 251 235;   --s-note-ln: 246 231 176; --s-note-fg: 180 83 9;
+  --s-ai-a: 244 167 208;      --s-ai-b: 190 170 250;    --s-ai-bg: 253 250 255;
+
+  --wsk-brand: var(--c-ink);
+  --wsk-brand-hover: 38 38 38;
+  --wsk-focus: var(--c-ink);
+  --wsk-input-border: 168 168 168;   
+  --wsk-radius-sm: 6px; --wsk-radius-md: 10px; --wsk-radius-lg: 14px; --wsk-radius-xl: 18px;
+  --wsk-shadow-modal: 0 24px 48px rgb(0 0 0 / .14), 0 0 0 1px rgb(0 0 0 / .05);
+
+  --background-color: var(--c-canvas);
+  --surface-1: var(--c-panel); --surface-2: var(--c-panel); --surface-active: var(--c-soft);
+  --solid-1: var(--c-panel); --solid-2: var(--c-panel); --solid-3: var(--c-soft); --solid-active: var(--c-panel);
+  --card-color: var(--c-panel); --button-color: var(--c-panel); --button-hover-color: var(--c-soft);
+  --background-input-box: var(--c-panel);
+  --label-background: var(--c-soft); --label-border: var(--c-line);
+  --border-weak: var(--c-line); --border-container: var(--c-line); --border-strong: var(--c-line-strong);
+  --slate-1: var(--c-panel); --slate-2: 250 250 250; --slate-3: 244 244 245; --slate-4: var(--c-customer);
+  --slate-5: 228 228 231; --slate-6: 216 216 220; --slate-7: 200 200 205; --slate-8: 170 170 176;
+  --slate-9: 140 140 146; --slate-10: var(--c-ink-3); --slate-11: var(--c-ink-2); --slate-12: var(--c-ink);
+  --alpha-1: 0, 0, 0, 0.03; --alpha-2: 0, 0, 0, 0.05; --alpha-3: 255, 255, 255, 0.96; 
+  
+  --blue-1: 250 250 250; --blue-2: 245 245 245; --blue-3: 240 240 240; --blue-4: 232 232 232;
+  --blue-5: 220 220 220; --blue-6: 200 200 200; --blue-7: 170 170 170; --blue-8: 120 120 120;
+  --blue-9: var(--c-ink); --blue-10: 38 38 38; --blue-11: var(--c-ink); --blue-12: var(--c-ink);
+  --text-blue: var(--c-ink); --border-blue: var(--c-ink); --border-blue-strong: var(--c-ink);
+  --solid-blue: var(--c-agent);
+  --solid-iris: var(--s-ai-bg);
+  --solid-amber: var(--s-note-bg);
+  --text-amber: var(--s-note-fg);
+}
+html.wsk body.dark {
+  --c-canvas: 9 9 9;
+  --c-panel: 20 20 20;
+  --c-soft: 28 28 28;
+  --c-line: 38 38 38;
+  --c-line-strong: 52 52 52;
+  --c-ink: 245 245 245;
+  --c-ink-2: 180 180 186;
+  --c-ink-3: 140 140 148;
+  --c-on-ink: 10 10 10;
+  --c-customer: 30 33 40;
+  --c-agent: 32 32 34;
+  --s-red-bg: 58 22 20;    --s-red-fg: 252 136 124;  --s-red-ln: 96 36 32;
+  --s-orange-bg: 56 34 16; --s-orange-fg: 251 170 100; --s-orange-ln: 92 56 26;
+  --s-green-bg: 18 46 30;  --s-green-fg: 110 220 150; --s-green-ln: 30 80 50;
+  --s-blue-bg: 22 32 60;   --s-blue-fg: 140 172 255; --s-blue-ln: 38 56 104;
+  --s-gray-bg: 34 34 36;   --s-gray-fg: 190 190 196; --s-gray-ln: 52 52 56;
+  --s-note-bg: 44 36 14;   --s-note-ln: 84 68 24;    --s-note-fg: 250 190 80;
+  --s-ai-a: 150 70 120;    --s-ai-b: 100 80 170;     --s-ai-bg: 26 22 32;
+  --wsk-brand: var(--c-ink);        
+  --wsk-focus: var(--c-ink);
+  --wsk-brand-hover: 220 220 220;
+  --wsk-input-border: 92 92 92;
+
+  --background-color: var(--c-canvas);
+  --surface-1: var(--c-panel); --surface-2: var(--c-panel); --surface-active: var(--c-soft);
+  --solid-1: var(--c-panel); --solid-2: var(--c-panel); --solid-3: var(--c-soft); --solid-active: var(--c-soft);
+  --card-color: var(--c-panel); --button-color: var(--c-soft); --button-hover-color: 36 36 36;
+  --background-input-box: var(--c-panel);
+  --label-background: var(--c-soft); --label-border: var(--c-line);
+  --border-weak: var(--c-line); --border-container: var(--c-line); --border-strong: var(--c-line-strong);
+  --slate-1: var(--c-panel); --slate-2: 24 24 24; --slate-3: 30 30 30; --slate-4: var(--c-customer);
+  --slate-5: 44 44 46; --slate-6: 56 56 58; --slate-7: 70 70 74; --slate-8: 96 96 100;
+  --slate-9: 120 120 126; --slate-10: var(--c-ink-3); --slate-11: var(--c-ink-2); --slate-12: var(--c-ink);
+  --alpha-1: 255, 255, 255, 0.03; --alpha-2: 255, 255, 255, 0.06; --alpha-3: 24, 24, 24, 0.96;
+  --blue-1: 20 20 20; --blue-2: 26 26 26; --blue-3: 32 32 32; --blue-4: 40 40 40;
+  --blue-5: 52 52 52; --blue-6: 70 70 70; --blue-7: 100 100 100; --blue-8: 150 150 150;
+  --blue-9: var(--c-ink); --blue-10: 220 220 220; --blue-11: var(--c-ink); --blue-12: var(--c-ink);
+  --text-blue: var(--c-ink); --border-blue: var(--c-ink); --border-blue-strong: var(--c-ink);
+  --solid-blue: var(--c-agent);
+  --solid-iris: var(--s-ai-bg);
+  --solid-amber: var(--s-note-bg);
+  --text-amber: var(--s-note-fg);
+}
+
+html.wsk body { font-feature-settings: 'cv11', 'ss01'; -webkit-font-smoothing: antialiased; color: rgb(var(--c-ink)); }
+html.wsk .conversation .text-xxs,
+html.wsk [data-test-id='sidebar-unread-badge'] { font-variant-numeric: tabular-nums; }
+html.wsk :is(h1, h2) { letter-spacing: -.02em; }
+
+html.wsk .bg-n-brand,
+html.wsk .checked\:bg-n-brand:checked { background-color: rgb(var(--wsk-brand)); }
+html.wsk .hover\:bg-n-brand\/90:hover,
+html.wsk .enabled\:hover\:bg-n-brand\/90:enabled:hover { background-color: rgb(var(--wsk-brand-hover)); }
+html.wsk .bg-n-brand\/5 { background-color: rgb(var(--wsk-brand) / .04); }
+html.wsk .bg-n-brand\/10 { background-color: rgb(var(--wsk-brand) / .06); }
+html.wsk .bg-n-brand\/20 { background-color: rgb(var(--wsk-brand) / .1); }
+html.wsk .text-n-brand,
+html.wsk .hover\:text-n-brand:hover { color: rgb(var(--c-ink)); }
+html.wsk .border-n-brand,
+html.wsk .focus\:border-n-brand:focus,
+html.wsk .checked\:border-n-brand:checked { border-color: rgb(var(--wsk-brand)); }
+html.wsk .outline-n-brand,
+html.wsk .focus\:outline-n-brand:focus,
+html.wsk .focus-within\:outline-n-brand:focus-within { outline-color: rgb(var(--wsk-brand)); }
+html.wsk .ring-n-brand { --tw-ring-color: rgb(var(--wsk-brand)); }
+html.wsk ninja-keys { --ninja-accent-color: rgb(var(--wsk-brand)); }
+html.wsk .bg-n-brand,
+html.wsk .bg-n-brand :is(span, svg, div) { color: rgb(var(--c-on-ink)) !important; }
+html.wsk .bg-n-brand { border-radius: var(--wsk-radius-md); }
+html.wsk .ProseMirror-prompt-buttons button[type='submit'],
+html.wsk .menu.group:hover { background-color: rgb(var(--wsk-brand)); color: rgb(var(--c-on-ink)); }
+html.wsk p a { color: rgb(var(--c-ink)); text-decoration: underline; text-underline-offset: 2px; }
+
+html.wsk body,
+html.wsk #app { background-color: rgb(var(--c-canvas)); }
+html.wsk aside:has(+ main) { background-color: rgb(var(--c-canvas)); border: 0 !important; }
+html.wsk aside:has(+ main) + main { background-color: rgb(var(--c-canvas)); padding: 8px 8px 8px 0; gap: 8px; }
+html.wsk main > section { gap: 8px; }
+html.wsk :is(.conversations-list-wrap, .conversation-details-wrap) {
+  background-color: rgb(var(--c-panel)) !important;
+  border: 1px solid rgb(var(--c-line)) !important;
+  border-radius: var(--wsk-radius-lg);
+  overflow: hidden;
+}
+html.wsk .conversation-details-wrap ~ div:has(.conversation--actions) {
+  background-color: rgb(var(--c-panel));
+  border: 1px solid rgb(var(--c-line)) !important;
+  border-radius: var(--wsk-radius-lg);
+  overflow: hidden auto;
+}
+
+html.wsk aside:has(+ main) li > .relative > :is(a, button).size-10 {
+  background: rgb(var(--c-panel));
+  border: 1px solid rgb(var(--c-line));
+  border-radius: 12px;
+  color: rgb(var(--c-ink-2));
+}
+html.wsk aside:has(+ main) li > .relative > :is(a, button).size-10.bg-n-alpha-2 {
+  background: rgb(var(--c-ink)); border-color: rgb(var(--c-ink)); color: rgb(var(--c-on-ink));
+}
+
+html.wsk aside:has(+ main) nav :is(a, button) { border-radius: var(--wsk-radius-md); }
+html.wsk aside:has(+ main) nav :is(a, button).bg-n-alpha-2 { background: rgb(var(--c-panel)); box-shadow: 0 0 0 1px rgb(var(--c-line)); color: rgb(var(--c-ink)); }
+
+html.wsk .conversations-list-wrap h1 { font-size: 17px; font-weight: 600; letter-spacing: -.01em; }
+html.wsk .conversations-list { padding: 4px 8px 8px; }
+html.wsk .conversations-list .conversation {
+  margin: 2px 0;
+  border: 1px solid transparent !important;
+  border-radius: 12px;
+  padding-left: 10px !important; padding-right: 10px !important;
+}
+html.wsk .conversations-list .conversation::before { display: none !important; }
+html.wsk .conversations-list .conversation:hover { background-color: rgb(var(--c-soft)); }
+html.wsk .conversations-list .conversation.active {
+  background-color: rgb(var(--c-soft)) !important;
+  border-color: rgb(var(--c-line)) !important;
+  animation: none;
+}
+html.wsk .conversations-list .conversation .border-line { padding-top: 10px; padding-bottom: 10px; }
+
+html.wsk .conversations-list .conversation > div:first-child :is(img, span[class*='rounded']) { border-radius: 9px !important; }
+html.wsk .conversations-list .conversation--user { font-size: 13px; font-weight: 600 !important; color: rgb(var(--c-ink)); }
+html.wsk .conversations-list .conversation .border-line > .h-6 { font-size: 12.5px; color: rgb(var(--c-ink-3)); }
+html.wsk .conversations-list .conversation .text-xxs { font-size: 11.5px; color: rgb(var(--c-ink-3)); }
+
+html.wsk .conversations-list .border-line > div.gap-1:not(.absolute) * { font-size: 11.5px !important; color: rgb(var(--c-ink-3)); }
+
+html.wsk .conversation [data-wsk-tone] {
+  border-radius: var(--wsk-radius-sm) !important;
+  border: 1px solid rgb(var(--tom-ln)) !important;
+  background: rgb(var(--tom-bg)) !important;
+  color: rgb(var(--tom-fg)) !important;
+  font-size: 11.5px !important; font-weight: 500;
+  padding: 0 6px !important; line-height: 18px;
+}
+html.wsk .conversation [data-wsk-tone] * { color: inherit !important; }
+html.wsk .conversation [data-wsk-tone] .label-color-dot { display: none; }
+html.wsk .conversation [data-wsk-tone='noise'] { display: none !important; }
+html.wsk [data-wsk-tone='red']    { --tom-bg: var(--s-red-bg);    --tom-fg: var(--s-red-fg);    --tom-ln: var(--s-red-ln); }
+html.wsk [data-wsk-tone='orange'] { --tom-bg: var(--s-orange-bg); --tom-fg: var(--s-orange-fg); --tom-ln: var(--s-orange-ln); }
+html.wsk [data-wsk-tone='green']  { --tom-bg: var(--s-green-bg);  --tom-fg: var(--s-green-fg);  --tom-ln: var(--s-green-ln); }
+html.wsk [data-wsk-tone='blue']   { --tom-bg: var(--s-blue-bg);   --tom-fg: var(--s-blue-fg);   --tom-ln: var(--s-blue-ln); }
+html.wsk [data-wsk-tone='gray']   { --tom-bg: var(--s-gray-bg);   --tom-fg: var(--s-gray-fg);   --tom-ln: var(--s-gray-ln); }
+
+html.wsk .conversations-list .conversation[data-wsk-wait]::after {
+  content: attr(data-wsk-wait);
+  position: absolute; right: 10px; bottom: 11px;
+  padding: 0 6px; line-height: 18px;
+  border-radius: var(--wsk-radius-sm);
+  font-size: 11.5px; font-weight: 600; font-variant-numeric: tabular-nums;
+  border: 1px solid rgb(var(--tom-ln)); background: rgb(var(--tom-bg)); color: rgb(var(--tom-fg));
+  pointer-events: none;
+}
+html.wsk .conversation[data-wsk-wait-level='warn'] { --tom-bg: var(--s-orange-bg); --tom-fg: var(--s-orange-fg); --tom-ln: var(--s-orange-ln); }
+html.wsk .conversation[data-wsk-wait-level='late'] { --tom-bg: var(--s-red-bg);    --tom-fg: var(--s-red-fg);    --tom-ln: var(--s-red-ln); }
+html.wsk .conversation[data-wsk-wait] .border-line { padding-right: 96px; }
+
+html.wsk .conversations-list-wrap [role='tablist'] { gap: 6px; border: 0 !important; padding: 0 12px; }
+html.wsk .conversations-list-wrap [role='tab'],
+html.wsk .conversations-list-wrap .tabs-title a {
+  border: 1px solid rgb(var(--c-line)) !important;
+  border-radius: var(--wsk-radius-md);
+  padding: 4px 10px !important;
+  font-size: 12.5px; color: rgb(var(--c-ink));
+}
+html.wsk .conversations-list-wrap :is([role='tab'][aria-selected='true'], .tabs-title.is-active a) {
+  background: rgb(var(--c-ink)); border-color: rgb(var(--c-ink)) !important; color: rgb(var(--c-on-ink)) !important;
+}
+html.wsk .conversations-list-wrap :is([role='tab'][aria-selected='true'], .tabs-title.is-active a) * { color: rgb(var(--c-on-ink)) !important; }
+
+html.wsk [class*='xl:h-12']:has(.conversation--header--actions) { border-bottom: 1px solid rgb(var(--c-line)); }
+html.wsk div:has(> .conversation--header--actions) > div:first-child span { font-size: 14px; font-weight: 600; }
+html.wsk .conversation--header--actions,
+html.wsk .conversation--header--actions * { font-size: 12px; color: rgb(var(--c-ink-3)); }
+html.wsk [class*='xl:h-12']:has(.conversation--header--actions) button { border-radius: var(--wsk-radius-md); }
+
+html.wsk ul.conversation-panel :is(.left-bubble, .right-bubble) { border-radius: 14px !important; font-size: 13.5px; line-height: 1.55; }
+html.wsk ul.conversation-panel .left-bubble { border-bottom-left-radius: 4px !important; }
+html.wsk ul.conversation-panel .right-bubble { border-bottom-right-radius: 4px !important; }
+html.wsk ul.conversation-panel .prose-bubble { max-width: 68ch; }
+
+html.wsk .right-bubble.bg-n-solid-amber {
+  --amber-12: var(--c-ink);
+  border: 1px solid rgb(var(--s-note-ln));
+  color: rgb(var(--c-ink)) !important;
+}
+html.wsk .right-bubble.bg-n-solid-amber::before {
+  content: var(--wsk-t-note);
+  display: block; margin-bottom: 4px;
+  font-size: 11.5px; line-height: 16px; font-weight: 600;
+  color: rgb(var(--s-note-fg));
+}
+html.wsk .bg-n-solid-amber .text-n-amber-12\/50 { color: rgb(var(--c-ink-3)); }
+
+html.wsk ul.conversation-panel .bg-n-solid-iris {
+  border: 1px solid transparent;
+  background: linear-gradient(rgb(var(--s-ai-bg)), rgb(var(--s-ai-bg))) padding-box,
+              linear-gradient(135deg, rgb(var(--s-ai-a)), rgb(var(--s-ai-b))) border-box !important;
+  border-radius: 14px !important;
+}
+
+html.wsk ul.conversation-panel .bg-n-alpha-1 { background: transparent !important; font-size: 12px; color: rgb(var(--c-ink-3)); }
+
+html.wsk .reply-box {
+  border: 1px solid rgb(var(--c-line)) !important;
+  border-radius: var(--wsk-radius-lg);
+  background-color: rgb(var(--c-panel));
+  box-shadow: 0 1px 2px rgb(0 0 0 / .04);
+}
+html.wsk .reply-box.is-focused { border-color: rgb(var(--c-line-strong)) !important; box-shadow: 0 0 0 3px rgb(var(--c-ink) / .06); }
+html.wsk .reply-box .ProseMirror-woot-style { font-size: 13.5px; line-height: 1.55; min-height: 6rem; max-height: 22rem; }
+html.wsk .reply-box .ProseMirror:focus-visible,
+html.wsk .reply-box [contenteditable]:focus-visible { outline: none !important; }
+
+html.wsk .reply-box .bg-n-brand { border-radius: var(--wsk-radius-md) !important; }
+
+html.wsk .reply-box.is-private {
+  background-color: rgb(var(--s-note-bg)) !important;
+  border-color: rgb(var(--s-note-ln)) !important;
+}
+html.wsk .reply-box.is-private.is-focused { box-shadow: 0 0 0 3px rgb(var(--s-note-ln) / .6); }
+html.wsk .reply-box.is-private .bg-n-amber-9 { background-color: rgb(var(--c-ink)) !important; color: rgb(var(--c-on-ink)) !important; border-radius: var(--wsk-radius-md) !important; }
+html.wsk .reply-box.is-private .bg-n-amber-9 * { color: rgb(var(--c-on-ink)) !important; }
+
+html.wsk .reply-box button:has(> .absolute.rounded-full) { border-radius: var(--wsk-radius-md) !important; background: rgb(var(--c-soft)) !important; border-color: rgb(var(--c-line)) !important; font-size: 12.5px; }
+html.wsk .reply-box button:has(> .absolute.rounded-full) > .absolute.rounded-full { border-radius: 8px; box-shadow: 0 0 0 1px rgb(var(--c-line)); }
+
+html.wsk .reply-box[data-wsk-recipients='collapsed'] .input-group-wrap { display: none; }
+html.wsk [data-wsk-recipients-toggle] {
+  font-size: 12px; line-height: 20px; padding: 0 8px; margin: 4px 12px 0;
+  border-radius: var(--wsk-radius-sm); color: rgb(var(--c-ink-3)); background: transparent;
+}
+html.wsk [data-wsk-recipients-toggle]:hover { background: rgba(var(--alpha-2)); color: rgb(var(--c-ink)); }
+
+html.wsk .reply-box[data-wsk-warn]::before {
+  content: attr(data-wsk-warn);
+  display: block; margin: 10px 12px 0; padding: 4px 8px;
+  border-radius: var(--wsk-radius-sm);
+  border: 1px solid rgb(var(--s-red-ln)); background: rgb(var(--s-red-bg)); color: rgb(var(--s-red-fg));
+  font-size: 12px; line-height: 18px; font-weight: 500;
+}
+html.wsk ::highlight(wsk-placeholder) {
+  background-color: rgb(254 238 236);
+  color: rgb(196 32 22);
+  text-decoration: underline wavy rgb(196 32 22);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+html.wsk body.dark ::highlight(wsk-placeholder) { background-color: rgb(58 22 20); color: rgb(252 136 124); text-decoration-color: rgb(252 136 124); }
+
+html.wsk .conversation-details-wrap ~ div:has(.conversation--actions) :is(.rounded-lg, .rounded-xl).border { border-radius: 12px !important; }
+html.wsk .conversation--details > div:has(> [data-wsk-attr-group]) { display: flex; flex-direction: column; }
+html.wsk [data-wsk-attr-group='0'] { order: 1; }
+html.wsk [data-wsk-attr-group='1'] { order: 2; }
+html.wsk [data-wsk-attr-group='2'] { order: 3; }
+html.wsk [data-wsk-attr-group='3'] { order: 4; }
+html.wsk [data-wsk-attr-group='4'] { order: 5; }
+html.wsk [data-wsk-attr-group='5'] { order: 6; }
+html.wsk [data-wsk-attr-group='6'] { order: 7; }
+html.wsk [data-wsk-attr-group='7'] { order: 8; }
+html.wsk html.wsk html.wsk html.wsk html.wsk html.wsk [data-wsk-attr-head]::before {
+  content: attr(data-wsk-attr-head);
+  display: block; padding: 14px 16px 4px;
+  font-size: 12px; font-weight: 600; color: rgb(var(--c-ink-3));
+}
+html.wsk [data-wsk-attr-empty] > div { padding-top: 6px; padding-bottom: 6px; }
+html.wsk [data-wsk-attr-empty] > div > div:first-child { margin-bottom: 0; }
+html.wsk [data-wsk-attr-empty] h4 span { color: rgb(var(--c-ink-3)); font-weight: 400; }
+html.wsk [data-wsk-date] { font-size: 0 !important; }
+html.wsk [data-wsk-date]::after { content: attr(data-wsk-date); font-size: 13px; font-variant-numeric: tabular-nums; }
+
+html.wsk .field-base,
+html.wsk input[type]:not([type='file']):not([type='checkbox']):not([type='radio']):not([type='range']):not([type='hidden']):not(.reset-base):not(.no-margin),
+html.wsk select,
+html.wsk textarea { border-radius: var(--wsk-radius-md); font-size: 13.5px; }
+html.wsk :is(input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='hidden']), select, textarea, .field-base) {
+  --border-weak: var(--wsk-input-border);
+  --border-strong: var(--wsk-input-border);
+}
+html.wsk :is(input, select, textarea):not(.outline-none):not([class*='outline-none'] > *):focus-visible,
+html.wsk .field-base:not(.outline-none):focus {
+  outline: 1px solid rgb(var(--c-ink)) !important;
+  outline-offset: 0;
+  box-shadow: 0 0 0 4px rgb(var(--c-ink) / .08);
+}
+html.wsk :is(input, textarea).outline-none:focus-visible,
+html.wsk [class*='outline-none'] > input:focus-visible { outline: none !important; }
+html.wsk div:has(> input.outline-none:focus-visible) { box-shadow: inset 0 -2px 0 rgb(var(--c-ink)); }
+html.wsk input::placeholder,
+html.wsk textarea::placeholder { color: rgb(var(--c-ink-3)); opacity: 1; }
+html.wsk label { font-size: 13px; font-weight: 500; color: rgb(var(--c-ink)); }
+html.wsk .help-text { font-size: 12px; font-weight: 400; line-height: 18px; color: rgb(var(--c-ink-3)); }
+html.wsk input.error,
+html.wsk .field-error { outline-width: 2px !important; }
+html.wsk input[type='checkbox'],
+html.wsk input[type='radio'] { accent-color: rgb(var(--c-ink)); width: 16px; height: 16px; }
+html.wsk[data-wsk-area='settings'] main form { max-width: 760px; }
+html.wsk[data-wsk-area='settings'] aside:has(+ main) + main > * { background: rgb(var(--c-panel)); border: 1px solid rgb(var(--c-line)); border-radius: var(--wsk-radius-lg); }
+
+html.wsk .modal-mask { background-color: rgb(0 0 0 / .28); backdrop-filter: blur(2px); }
+html.wsk body.dark .modal-mask { background-color: rgb(0 0 0 / .6); }
+html.wsk .modal-container,
+html.wsk dialog > form,
+html.wsk dialog > div > form {
+  background-color: rgb(var(--c-panel)) !important;
+  border: 1px solid rgb(var(--c-line));
+  border-radius: var(--wsk-radius-xl);
+  box-shadow: var(--wsk-shadow-modal);
+}
+html.wsk dialog { border-radius: var(--wsk-radius-xl); }
+html.wsk dialog::backdrop { background-color: rgb(0 0 0 / .28); }
+html.wsk body.dark dialog::backdrop { background-color: rgb(0 0 0 / .6); }
+html.wsk dialog h3,
+html.wsk .modal-container h2 { font-size: 17px; font-weight: 600; letter-spacing: -.01em; }
+
+html.wsk :focus-visible:not(input):not(textarea):not(select):not([contenteditable]) {
+  outline: 2px solid rgb(var(--wsk-focus)) !important;
+  outline-offset: 2px !important;
+}
+html.wsk.wsk-focus aside:has(+ main) { display: none; }
+html.wsk.wsk-focus .conversation-details-wrap ~ div:has(.conversation--actions) { display: none; }
+html.wsk .banner.primary { background-color: rgb(var(--c-canvas)) !important; }
+html.wsk .banner.primary,
+html.wsk .banner.primary :is(span, a, button, div, .text-n-blue-11) { color: rgb(var(--c-ink-2)) !important; }
+html.wsk .banner.primary a { color: rgb(var(--c-ink)) !important; text-decoration: underline; }
+@media (prefers-reduced-motion: reduce) {
+  html.wsk .animate-card-select { animation: none; }
+  html.wsk dialog, html.wsk dialog > form, html.wsk .modal-fade-enter-active, html.wsk .modal-fade-leave-active { transition: none !important; }
+}
+
+html.wsk .conversation [data-wsk-label-text] { font-size: 0 !important; }
+html.wsk .conversation [data-wsk-label-text]::after { content: attr(data-wsk-label-text); font-size: 11.5px; }
+
+html.wsk aside:has(+ main) :is(a, button):hover { background-image: none !important; background-color: rgb(var(--c-panel) / .7); }
+html.wsk .conversations-list-wrap :is([role='tab'], .tabs-title a, button):not([aria-selected='true']):hover { color: rgb(var(--c-ink)) !important; }
+html.wsk .list-group .drag-handle:hover { background-color: rgb(var(--c-soft)) !important; }
+
+html.wsk .conversation [data-wsk-time] > span { display: none; }
+html.wsk .conversation [data-wsk-time]::after { content: attr(data-wsk-time); font-size: 11.5px; color: rgb(var(--c-ink-3)); }
+html.wsk .conversation .border-line > div.absolute > span + span:not(:empty) { background: rgb(var(--c-ink)); color: rgb(var(--c-on-ink)) !important; font-weight: 600; }

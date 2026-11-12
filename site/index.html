@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>woot-skins · Skins for Chatwoot</title>
+<meta name="description" content="Two skins for the Chatwoot agent dashboard. Paste one snippet into Super Admin, no fork and no rebuild.">
+<meta property="og:title" content="woot-skins">
+<meta property="og:description" content="Skins for the Chatwoot agent dashboard. Paste one snippet, no fork.">
+<meta property="og:image" content="/shots/fox-light.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff; --soft: #f4f5f7; --line: #e5e7eb; --ink: #15181d; --ink-2: #4a4f58; --ink-3: #5e636d;
+    --accent: #0f5fd0; --accent-ink: #ffffff; --code-bg: #0f1115; --code-ink: #e6e8eb;
+    --radius: 12px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #111215; --soft: #1a1c20; --line: #2a2d32; --ink: #e9ebee; --ink-2: #b2b7bf; --ink-3: #9095a0;
+      --accent: #86aef7; --accent-ink: #0d1117; --code-bg: #0a0b0d;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #111215; --soft: #1a1c20; --line: #2a2d32; --ink: #e9ebee; --ink-2: #b2b7bf; --ink-3: #9095a0;
+    --accent: #86aef7; --accent-ink: #0d1117; --code-bg: #0a0b0d;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  header.top { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
+  .mark { font-weight: 700; font-size: 17px; letter-spacing: -.01em; text-decoration: none; display: inline-flex; gap: 10px; align-items: center; }
+  .mark i { width: 22px; height: 22px; border-radius: 7px; background: var(--accent); display: inline-block; box-shadow: inset -7px -7px 0 rgba(255,255,255,.22); }
+  nav.links { display: flex; gap: 22px; font-size: 14px; color: var(--ink-2); }
+  nav.links a { text-decoration: none; }
+  nav.links a:hover { color: var(--ink); }
+
+  .hero { padding: 56px 0 28px; display: grid; gap: 18px; max-width: 760px; }
+  h1 { font-size: clamp(34px, 5vw, 52px); line-height: 1.08; letter-spacing: -.03em; margin: 0; font-weight: 700; }
+  .lede { font-size: 19px; color: var(--ink-2); margin: 0; max-width: 60ch; }
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; height: 42px; padding: 0 16px; border-radius: 10px; font: 600 14px/1 Inter, sans-serif; text-decoration: none; cursor: pointer; border: 1px solid var(--line); background: var(--bg); color: var(--ink); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+  .btn:hover { filter: brightness(1.05); }
+  .meta { font-size: 13px; color: var(--ink-3); }
+
+  .viewer { margin: 28px 0 8px; }
+  .controls { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 10px; padding: 3px; background: var(--soft); }
+  .seg button { border: 0; background: transparent; color: var(--ink-2); font: 500 13.5px/1 Inter, sans-serif; padding: 8px 14px; border-radius: 7px; cursor: pointer; }
+  .seg button[aria-pressed="true"] { background: var(--bg); color: var(--ink); box-shadow: 0 0 0 1px var(--line); font-weight: 600; }
+  .caption { font-size: 14px; color: var(--ink-2); margin: 14px 0 0; }
+  .frame { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: var(--soft); box-shadow: 0 30px 60px -30px rgba(15, 23, 42, .35); aspect-ratio: 1440 / 900; }
+  .frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+  section.block { padding: 64px 0 8px; }
+  h2 { font-size: 28px; letter-spacing: -.02em; line-height: 1.2; margin: 0 0 8px; }
+  .sub { color: var(--ink-2); margin: 0 0 28px; max-width: 62ch; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px 32px; }
+  .feature h3 { font-size: 16px; margin: 0 0 4px; }
+  .feature p { margin: 0; color: var(--ink-2); font-size: 15px; }
+
+  ol.steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 22px; counter-reset: s; }
+  ol.steps li { counter-increment: s; display: grid; grid-template-columns: 36px 1fr; gap: 14px; }
+  ol.steps li::before { content: counter(s); width: 28px; height: 28px; border-radius: 999px; border: 1px solid var(--line); display: grid; place-items: center; font: 600 13px/1 Inter, sans-serif; color: var(--ink-2); margin-top: 1px; }
+  ol.steps h3 { margin: 0 0 2px; font-size: 16px; }
+  ol.steps p { margin: 0; color: var(--ink-2); font-size: 15px; }
+  code, pre { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  p code, li code { font-size: .88em; background: var(--soft); border: 1px solid var(--line); padding: 1px 5px; border-radius: 5px; }
+  pre { background: var(--code-bg); color: var(--code-ink); padding: 18px 20px; border-radius: var(--radius); overflow-x: auto; font-size: 13.5px; line-height: 1.6; margin: 0; }
+  .codebox { position: relative; }
+  .codebox .copy { position: absolute; top: 10px; right: 10px; height: 30px; font-size: 12.5px; background: rgba(255,255,255,.08); color: #e6e8eb; border-color: rgba(255,255,255,.14); }
+  .two { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+  .card { border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; }
+  .card h3 { margin: 0 0 6px; font-size: 16px; }
+  .card p { margin: 0 0 14px; color: var(--ink-2); font-size: 15px; }
+  .tag { font-size: 12px; font-weight: 600; color: var(--accent); margin-left: 6px; }
+  footer { margin-top: 80px; padding: 28px 0 48px; border-top: 1px solid var(--line); color: var(--ink-3); font-size: 13.5px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+  @media (max-width: 640px) { nav.links .hide-sm { display: none; } .hero { padding-top: 32px; } }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="/"><i aria-hidden="true"></i>woot-skins</a>
+    <nav class="links">
+      <a href="#install">Install</a>
+      <a href="#configure" class="hide-sm">Configure</a>
+      <a href="https://github.com/airton/woot-skins">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>A calmer Chatwoot for people who answer tickets all day.</h1>
+      <p class="lede">Two skins for the Chatwoot agent dashboard. Paste one snippet into Super Admin and every agent gets them. No fork, no rebuild, nothing to host.</p>
+      <div class="actions">
+        <button class="btn primary" id="copy-snippet" type="button">Copy the snippet</button>
+        <a class="btn" href="https://github.com/airton/woot-skins">View on GitHub</a>
+      </div>
+      <p class="meta">Tested on Chatwoot 4.16 · MIT license · Light and dark</p>
+    </section>
+
+    <section class="viewer" aria-label="Screenshots">
+      <div class="controls">
+        <div class="seg" role="group" aria-label="Skin">
+          <button type="button" data-skin="fox" aria-pressed="true">Fox</button>
+          <button type="button" data-skin="cilo" aria-pressed="false">Cilo</button>
+        </div>
+        <div class="seg" role="group" aria-label="View">
+          <button type="button" data-view="light" aria-pressed="true">Light</button>
+          <button type="button" data-view="dark" aria-pressed="false">Dark</button>
+          <button type="button" data-view="note" aria-pressed="false">Private note</button>
+        </div>
+      </div>
+      <div class="frame"><img id="shot" src="/shots/fox-light.png" width="1440" height="900" alt="Chatwoot with the Fox skin, light mode"></div>
+      <p class="caption" id="caption">Fox: one white frame, hairlines and Slack-style messages. Who said what is written on every message.</p>
+    </section>
+
+    <section class="block">
+      <h2>What changes</h2>
+      <p class="sub">The layout stays the Chatwoot your team already knows. The skins change what it emphasizes.</p>
+      <div class="grid">
+        <div class="feature"><h3>Waiting time on the card</h3><p>Conversations waiting longer than you allow turn orange, then red. You set the hours.</p></div>
+        <div class="feature"><h3>Private notes you can't miss</h3><p>Notes get their own color and a written label, in the thread and in the composer, so they never go to a customer by accident.</p></div>
+        <div class="feature"><h3>Unfilled placeholders</h3><p>A reply with <code>{{order_id}}</code> or <code>[NAME]</code> still in it gets a warning and a wavy underline before you send it.</p></div>
+        <div class="feature"><h3>Labels that read well</h3><p>Pick a tone per label, hide automation labels from the card and strip prefixes like <code>queue-</code>.</p></div>
+        <div class="feature"><h3>Case card in the contact panel</h3><p>Show up to four conversation attributes as a 2x2 grid at the top of the panel (Fox).</p></div>
+        <div class="feature"><h3>Small fixes</h3><p>CC and BCC tucked away, unread count in the tab title, dates stored as <code>2026-11-05</code> shown on the right day.</p></div>
+      </div>
+    </section>
+
+    <section class="block" id="install">
+      <h2>Install in two minutes</h2>
+      <p class="sub">You need a Super Admin login on your Chatwoot instance (self-hosted).</p>
+      <ol class="steps">
+        <li><div><h3>Copy the snippet</h3><p>Use the button above, or download <a href="/dist/snippet.html"><code>snippet.html</code></a>. It holds the CSS and the script inline, so nothing loads from another server.</p></div></li>
+        <li><div><h3>Paste it into Dashboard Scripts</h3><p>Open <code>/super_admin/app_config?config=general</code>, find <strong>Dashboard Scripts</strong>, paste and save.</p></div></li>
+        <li><div><h3>Reload the dashboard</h3><p>Pick a skin in the footer of the sidebar, or press <code>Alt</code> + <code>Shift</code> + <code>T</code>. Each agent's choice is kept in their browser.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="block" id="configure">
+      <h2>Make it fit your team</h2>
+      <p class="sub">Everything is optional. Put this block above the snippet and keep only the keys you need.</p>
+      <div class="codebox">
+        <button class="btn copy" type="button" data-copy="config">Copy</button>
+<pre id="config"><code>&lt;script&gt;
+window.WOOT_SKINS = {
+  themes: ['fox', 'cilo'],          // first one is the default
+  locale: null,                     // 'en' or 'pt-BR'; null follows Chatwoot
+  waitHours: [4, 12],               // orange after 4 h, red after 12 h
+  labels: {
+    critical: '^urgent$',           // shown in red
+    hidden: '^(bot-|csat-sent$)',   // hidden on the card
+    tones: { billing: 'green', refunds: 'orange', shipping: 'blue' },
+    stripPrefix: '^queue-'
+  },
+  attributeGroups: [['Billing', '^billing_'], ['Other', '.']],
+  brandAttribute: 'plan',
+  caseCard: [['plan', 'Plan'], ['order_total', 'Order total'],
+             ['renewal_date', 'Renewal', 'date'], ['region', 'Region']]
+};
+&lt;/script&gt;</code></pre>
+      </div>
+    </section>
+
+    <section class="block" id="hosting">
+      <h2>Inline or linked</h2>
+      <p class="sub">Anything in Dashboard Scripts runs inside every agent's session, so where the code comes from matters.</p>
+      <div class="two">
+        <div class="card">
+          <h3>Paste it inline <span class="tag">Recommended</span></h3>
+          <p>The code lives in your Chatwoot. Updating is a decision you make: copy the snippet of a new release and paste it again.</p>
+        </div>
+        <div class="card">
+          <h3>Link a pinned version</h3>
+          <p>Load an exact release from jsDelivr with an integrity hash, so the file can't change under you. Never link a moving "latest".</p>
+          <div class="codebox"><pre><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/airton/woot-skins@v0.1.0/dist/woot-skins.css"&gt;
+&lt;script src="https://cdn.jsdelivr.net/gh/airton/woot-skins@v0.1.0/dist/woot-skins.js"
+        integrity="sha384-…" crossorigin="anonymous"&gt;&lt;/script&gt;</code></pre></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>Safe to try</h2>
+      <div class="grid">
+        <div class="feature"><h3>Read-only</h3><p>The script reads what Chatwoot already rendered. It never calls the API or changes data.</p></div>
+        <div class="feature"><h3>Off switch</h3><p>Add <code>?wsk=off</code> to any dashboard URL to see plain Chatwoot. Delete the snippet to uninstall.</p></div>
+        <div class="feature"><h3>Scoped</h3><p>Only the agent dashboard is touched. Login, Super Admin and the website widget stay as they are.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>woot-skins · MIT · not affiliated with Chatwoot Inc.</span>
+    <span>Screenshots use fictional data.</span>
+  </footer>
+</div>
+
+<script>
+  (function () {
+    var skin = 'fox', view = 'light';
+    var CAPTIONS = {
+      fox: 'Fox: one white frame, hairlines and Slack-style messages. Who said what is written on every message.',
+      cilo: 'Cilo: white panels on a soft grey canvas, black actions and soft signal chips.'
+    };
+    var NOTE = { fox: 'Private note mode: the composer turns amber and placeholders get flagged before sending.', cilo: 'Private note mode in Cilo, dark.' };
+    var img = document.getElementById('shot'), cap = document.getElementById('caption');
+    function render() {
+      var file = view === 'note' ? skin + '-note' : skin + '-' + view;
+      img.src = '/shots/' + file + '.png';
+      img.alt = 'Chatwoot with the ' + (skin === 'fox' ? 'Fox' : 'Cilo') + ' skin, ' + (view === 'note' ? 'private note mode' : view + ' mode');
+      cap.textContent = view === 'note' ? NOTE[skin] : CAPTIONS[skin];
+      document.querySelectorAll('[data-skin]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.skin === skin)); });
+      document.querySelectorAll('[data-view]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.view === view)); });
+    }
+    document.querySelectorAll('[data-skin]').forEach(function (b) { b.addEventListener('click', function () { skin = b.dataset.skin; render(); }); });
+    document.querySelectorAll('[data-view]').forEach(function (b) { b.addEventListener('click', function () { view = b.dataset.view; render(); }); });
+    ['fox-dark', 'cilo-light', 'cilo-dark'].forEach(function (f) { var i = new Image(); i.src = '/shots/' + f + '.png'; });
+
+    function copy(text, btn) {
+      var done = function () { var t = btn.textContent; btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = t; }, 1600); };
+      if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, function () {});
+    }
+    document.getElementById('copy-snippet').addEventListener('click', function (e) {
+      var btn = e.currentTarget;
+      fetch('/dist/snippet.html').then(function (r) { return r.text(); }).then(function (t) { copy(t, btn); });
+    });
+    document.querySelectorAll('[data-copy]').forEach(function (b) {
+      b.addEventListener('click', function () { copy(document.getElementById(b.dataset.copy).textContent, b); });
+    });
+  })();
+</script>
+</body>
+</html>

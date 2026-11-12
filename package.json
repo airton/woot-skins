@@ -1,0 +1,14 @@
+{
+  "name": "woot-skins",
+  "version": "0.1.0",
+  "description": "Skins for the Chatwoot agent dashboard, installed through Super Admin > Dashboard Scripts.",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "node build.mjs --watch"
+  },
+  "repository": { "type": "git", "url": "https://github.com/airton/woot-skins.git" },
+  "keywords": ["chatwoot", "theme", "skin", "customer-support", "css"]
+}

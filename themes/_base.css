@@ -1,0 +1,24 @@
+/* woot-skins | shared rules (skin picker). Built into dist/woot-skins.css, unscoped by theme. */
+
+html.wsk #wsk-skin {
+  position: fixed; left: 10px; bottom: 18px; z-index: 60;
+  display: flex; align-items: center; gap: 6px;
+  padding: 3px 4px 3px 9px;
+  border-radius: 9px;
+  border: 1px solid rgb(0 0 0 / .1);
+  background: rgb(255 255 255 / .96);
+  box-shadow: 0 2px 8px rgb(0 0 0 / .08);
+  font: 500 11.5px/1 Inter, system-ui, sans-serif;
+  color: rgb(82 82 91);
+}
+html.wsk body.dark #wsk-skin, html.wsk:has(body.dark) #wsk-skin { background: rgb(28 28 28 / .96); border-color: rgb(255 255 255 / .12); color: rgb(180 180 186); }
+html.wsk #wsk-skin select {
+  font: 600 11.5px/1 Inter, system-ui, sans-serif;
+  color: inherit; background: transparent; border: 0; padding: 4px 2px; height: auto; margin: 0;
+  min-width: 0; width: auto; border-radius: 6px; cursor: pointer;
+}
+html.wsk #wsk-skin select:focus-visible { outline: 2px solid currentColor; outline-offset: 1px; }
+html:not(.wsk) #wsk-skin { display: none; }
+
+/* room for the picker next to the profile in the sidebar footer */
+html.wsk:has(#wsk-skin) aside:has(+ main) > section:last-of-type button .min-w-0 { padding-inline-end: 72px; }
