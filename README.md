@@ -2,7 +2,7 @@
 
 Skins for the [Chatwoot](https://github.com/chatwoot/chatwoot) agent dashboard. You paste one snippet into Super Admin and every agent gets them. There is no fork, no rebuild and nothing to host.
 
-#![Fox skin, light mode](site/shots/fox-light.png)
+![Fox skin, light mode](site/shots/fox-light.png)
 
 | Fox | Cilo |
 |---|---|
