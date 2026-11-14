@@ -1,6 +1,6 @@
 # woot-skins
 
-Skins for the [Chatwoot](https://github.com/chatwoot/chatwoot) agent dashboard. You paste one snippet into Super Admin and every agent gets them. There is no fork, no rebuild and nothing to host.
+Skins for the [Chatwoot](https://github.com/chatwoot/chatwoot) agent dashboard. **Website and live preview: https://woot-skins.vercel.app** You paste one snippet into Super Admin and every agent gets them. There is no fork, no rebuild and nothing to host.
 
 ![Fox skin, light mode](site/shots/fox-light.png)
 
